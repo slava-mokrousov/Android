@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Minesweeper</string>
+
+    <string name="new_game">New game</string>
+    <string name="about">About</string>
+    <string name="easy">easy</string>
+    <string name="medium">medium</string>
+    <string name="hard">hard</string>
+    <string name="custom">custom</string>
+    <string name="columns">columns</string>
+    <string name="rows">rows</string>
+    <string name="bombs">bombs</string>
+    <string name="start_custom">start game</string>
+    <string name="about_window">You are playing minesweeper. Click on cell to open it, long click to put flag. Open all safe cells to win.\nGood luck!!!</string>
+    <string name="win">you won</string>
+    <string name="lose">you lost</string>
+    <string name="wrong_settings">wrong settings</string>
+    <string name="miss_click">click on board</string>
+
+</resources>

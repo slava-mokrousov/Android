@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Сапер</string>
+
+    <string name="new_game">Новая игра</string>
+    <string name="about">О приложении</string>
+    <string name="easy">легкий</string>
+    <string name="medium">средний</string>
+    <string name="hard">тяжелый</string>
+    <string name="custom">свой</string>
+    <string name="columns">столбцы</string>
+    <string name="rows">строки</string>
+    <string name="bombs">бомбы</string>
+    <string name="start_custom">начать игру</string>
+    <string name="about_window">Вы играете в сапера. Нажмите на клетку, чтобы открыть её, зажмите, чтобы поставить флажок. Откройте все безопасные поля,чтобы выиграть.\nУдачи!!!</string>
+    <string name="win">вы выиграли</string>
+    <string name="lose">вы проиграли</string>
+    <string name="wrong_settings">неправильные настройки</string>
+    <string name="miss_click">нажмите на поле</string>
+
+</resources>
