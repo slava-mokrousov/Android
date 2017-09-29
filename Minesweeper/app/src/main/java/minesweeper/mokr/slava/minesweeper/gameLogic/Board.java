@@ -1,11 +1,12 @@
 package minesweeper.mokr.slava.minesweeper.gameLogic;
 
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
 
-public class Board {
+public class Board implements Serializable {
 
     private final int height;
     private final int width;
@@ -65,7 +66,6 @@ public class Board {
             int y = random.nextInt(height);
             if (!array.get(x).get(y).isBomb()) {
                 array.get(x).get(y).setBomb();
-                //array.get(x).get(y).setValue(9);
             }
             else i--;
             i++;

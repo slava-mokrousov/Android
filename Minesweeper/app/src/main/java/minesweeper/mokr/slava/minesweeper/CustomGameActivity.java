@@ -9,8 +9,12 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import minesweeper.mokr.slava.minesweeper.gameLogic.Board;
+
 
 public class CustomGameActivity extends AppCompatActivity  {
+
+    private final static String GAME_KEY = "GAME_KEY";
 
     private int numColumns;
     private int numRows;
@@ -60,9 +64,11 @@ public class CustomGameActivity extends AppCompatActivity  {
             case R.id.start_custom:
                 if (numColumns == 0 || numRows == 0 || numBombs == 0 || numColumns*numRows == numBombs) Toast.makeText(CustomGameActivity.this, R.string.wrong_settings, Toast.LENGTH_SHORT).show();
                 else {
-                    Intent a = new Intent(this, GameActivity.class);
-                    NewGameActivity.setBoard(numColumns, numRows, numBombs);
-                    startActivity(a);
+                    Intent startGame = new Intent(this, GameActivity.class);
+                    Board board = new Board(numColumns, numRows);
+                    board.createGame(numBombs);
+                    startGame.putExtra(GAME_KEY, board);
+                    startActivity(startGame);
                 }
                 break;
             default:

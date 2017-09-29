@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private void bnClicked(View button) {
         switch (button.getId()) {
             case R.id.bn_game:
-                Intent a = new Intent(this, NewGameActivity.class);
-                startActivity(a);
+                Intent game = new Intent(this, NewGameActivity.class);
+                startActivity(game);
                 break;
             case R.id.bn_about:
                 Intent about = new Intent(this, AboutActivity.class);

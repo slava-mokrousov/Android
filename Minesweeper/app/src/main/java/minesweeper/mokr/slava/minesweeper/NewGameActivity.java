@@ -11,7 +11,7 @@ import minesweeper.mokr.slava.minesweeper.gameLogic.Board;
 
 public class NewGameActivity extends AppCompatActivity {
 
-    private static Board board;
+    private final static String GAME_KEY = "GAME_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,40 +35,33 @@ public class NewGameActivity extends AppCompatActivity {
     }
 
     private void bnClicked(View button) {
+        Board board;
+        Intent startGame;
         switch (button.getId()) {
             case R.id.bn_easy:
-                board = new Board(5, 9);
+                board = new Board(5,9);
                 board.createGame(6);
-                Intent easy = new Intent(this, GameActivity.class);
-                startActivity(easy);
+                startGame = new Intent(this, GameActivity.class);
                 break;
             case R.id.bn_medium:
-                board = new Board(6, 11);
+                board = new Board(6,11);
                 board.createGame(15);
-                Intent medium = new Intent(this, GameActivity.class);
-                startActivity(medium);
+                startGame = new Intent(this, GameActivity.class);
                 break;
             case R.id.bn_hard:
-                board = new Board(10, 18);
+                board = new Board(10,18);
                 board.createGame(40);
-                Intent hard = new Intent(this, GameActivity.class);
-                startActivity(hard);
+                startGame = new Intent(this, GameActivity.class);
                 break;
             case R.id.bn_custom:
                 Intent custom = new Intent(this, CustomGameActivity.class);
                 startActivity(custom);
-                break;
+                return;
             default:
-                break;
+                return;
         }
+        startGame.putExtra(GAME_KEY, board);
+        startActivity(startGame);
     }
 
-    public static Board getBoard() {
-        return board;
-    }
-
-    public static void setBoard(int columns, int rows, int bombs) {
-        board = new Board(columns, rows);
-        board.createGame(bombs);
-    }
 }

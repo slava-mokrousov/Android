@@ -16,8 +16,9 @@ import minesweeper.mokr.slava.minesweeper.gameLogic.Board;
 
 public class GameActivity extends AppCompatActivity implements View.OnTouchListener {
 
+    private final String GAME_KEY = "GAME_KEY";
 
-    private final Board board = NewGameActivity.getBoard();
+    private Board board;
     private final static int shift = 2;
     private final static int strokeWidth = 2;
     private final static int clickTime = 30;
@@ -27,9 +28,21 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState == null) {
+            board = (Board) getIntent().getSerializableExtra(GAME_KEY);
+        }
+        else {
+            board = (Board) savedInstanceState.getSerializable(GAME_KEY);
+        }
         DrawView view = new DrawView(this);
         view.setOnTouchListener(this);
         setContentView(view);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(GAME_KEY,board);
     }
 
     class DrawView extends View {

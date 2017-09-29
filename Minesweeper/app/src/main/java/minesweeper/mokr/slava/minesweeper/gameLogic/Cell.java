@@ -1,6 +1,8 @@
 package minesweeper.mokr.slava.minesweeper.gameLogic;
 
-public class Cell {
+import java.io.Serializable;
+
+public class Cell implements Serializable {
 
     private int value;
     private boolean bomb;
@@ -21,8 +23,6 @@ public class Cell {
     public boolean isBomb() {return bomb; }
 
     public void incValue() {value++; }
-
-    //public void setValue(int value) {this.value = value; }
 
     public int getValue() {return value; }
 
